@@ -1,0 +1,29 @@
+<!-- products/templates/products/product_edit.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit Product: {{ product.name }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Display the form fields for editing product details -->
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" value="{{ product.name }}">
+
+        <label for="description">Description:</label>
+        <textarea name="description">{{ product.description }}</textarea>
+
+        <label for="price">Price:</label>
+        <input type="number" name="price" value="{{ product.price }}">
+
+        <!-- Add more form fields for other product attributes as needed -->
+
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

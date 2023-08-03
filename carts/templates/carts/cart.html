@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Your Cart</h1>
+    <div class="row">
+        <div class="col-md-8">
+            {% if cart_items %}
+            <ul class="list-group">
+                {% for item in cart_items %}
+                <li class="list-group-item">{{ item.product.name }} - {{ item.quantity }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-muted">Your cart is empty.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
